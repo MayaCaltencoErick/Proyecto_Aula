@@ -28,11 +28,13 @@
     <header>
         <section class="menu"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Metro_de_la_Ciudad_de_M%C3%A9xico_logo.svg/1200px-Metro_de_la_Ciudad_de_M%C3%A9xico_logo.svg.png"
          width="45px" height="45px">
-            <a href="index.html"> Metro Seguro</a>
+            <a href="index.html"> Metro Seguro</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Aviso.html" class="ingresar">Aviso de privacidad</a>
+           
         </section>
     </header>
     <a href="iniciar.html" > <input type="button" value="Iniciar sesión" class="btn1"></a>
     <a href="registrar.html" > <input type="button" value="Registrar cuenta" class="btn2"></a>
+    
 </body>
     
     <%
