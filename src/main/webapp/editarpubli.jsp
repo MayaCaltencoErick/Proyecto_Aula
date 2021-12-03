@@ -112,7 +112,7 @@
             <% 
                 int linea = Integer.parseInt(hola3);
                 List<Parada> lista2 = Parada.buscarAllParbyLin(linea);
-                
+                sesionusu.setAttribute("linea", linea);
                 for(Parada e : lista2){
                     
                     %>

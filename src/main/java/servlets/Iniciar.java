@@ -57,7 +57,12 @@ public class Iniciar extends HttpServlet {
                 
                 
                     //admin
-                    response.sendRedirect("index.html");
+                    if(u.getRol()==1){
+                        response.sendRedirect("Admin.jsp");
+                    }else{
+                        response.sendRedirect("index.html"); 
+                    }
+                   
                     
                 
             }else{

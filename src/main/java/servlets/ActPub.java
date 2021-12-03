@@ -47,7 +47,7 @@ public class ActPub extends HttpServlet {
             
             int id_usu = hola2.getId();
             System.out.println(id_usu);
-           
+           int linea = (int) sesionusu.getAttribute("linea");
           
             String contenido = request.getParameter("textarea");
             
@@ -65,7 +65,7 @@ public class ActPub extends HttpServlet {
             int estatus =publicacion.actualizarPublicacion(e);
             
             if(estatus > 0){
-                response.sendRedirect("index.html");
+                response.sendRedirect("linea"+linea+".jsp");
             }else{
                 response.sendRedirect("error.jsp");;
             }

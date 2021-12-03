@@ -70,7 +70,7 @@
             <%if(hola2!=null){
                 System.out.println(hola2.getId());
                     System.out.println(e.getId_usu());
-                if(hola2.getId()== e.getId_usu()){
+                if(hola2.getId()== e.getId_usu()||hola2.getRol()==1){
                     System.out.println(hola2.getId());
                     System.out.println(e.getId_usu());
           %><a href="gestionar2.jsp?id1=<%=e.getId()%>&id2=<%=id%>" > <input type="button" value="Gestionar" class="btn2"></a></align></p>  <%

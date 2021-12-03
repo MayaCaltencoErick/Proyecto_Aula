@@ -4,12 +4,11 @@
 }
 
 .iniciar{
-    position: absolute;
+    
     width: 672px;
     height: 317px;
-    left: 0px;
-    top: 0px;
-    margin: 10rem;
+    
+    margin: 150px auto;
 align-items: center;
 text-align: center;
 background: #2F2F2F;
@@ -40,6 +39,8 @@ color: white;
     padding: 0.8rem;
 border: none;
 border-radius: 1rem;
+
+margin-bottom: 50px auto;
 }
 
 header{
@@ -66,4 +67,15 @@ a{
     width : 40%;
     color: white;
     height: 40%;
+}
+
+.ingresar{
+    position: absolute;
+width: 110px;
+height: 50px;
+right: 70px;
+top: 5px;
+color: white;
+font-size: 30px;
+display: flex;
 }

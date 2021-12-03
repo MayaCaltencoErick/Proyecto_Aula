@@ -39,11 +39,13 @@ public class ActUsu extends HttpServlet {
             nom = request.getParameter("usuario");
             con = request.getParameter("con");
             cor = request.getParameter("cor");
+            Usuarios hola = (Usuarios)idsesion.getAttribute("usuario");
             Usuarios e = new Usuarios();
             
             e.setNombre(nom);
             e.setPas(con);
             e.setEmail(cor);
+            e.setId(hola.getId());
             
             
             System.out.println(nom);
@@ -53,7 +55,7 @@ public class ActUsu extends HttpServlet {
             ArrayList <Usuarios> lista = Usuarios.buscarAllEmpleados();
              
            
-            String hola = lista.get(0).getNombre();
+            String hola2 = lista.get(0).getNombre();
             System.out.println(hola);
             System.out.println("holi");
            int estatus1 = 1;
@@ -61,6 +63,9 @@ public class ActUsu extends HttpServlet {
             if(cor.equals(i.getEmail())){
               System.out.println("hola2");
                estatus1 = 0;
+               if(hola.getId()==i.getId()){
+                  estatus1 = 1; 
+               }
             }   
             }
             if(estatus1 > 0){

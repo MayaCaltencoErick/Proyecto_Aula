@@ -21,8 +21,8 @@ return true;
 function validar2(){
     var nombre = document.getElementById("usuario");
     var con = document.getElementById("con");
-    if (nombre.value.length === 0|| nombre.value.length>10){
-      alert ("Escriba entre 1 y 10 caracteres en su usuario por favor");
+    if (nombre.value.length === 0|| nombre.value.length>20){
+      alert ("Escriba entre 1 y 20 caracteres en su usuario por favor");
       return false;
   }
   if (con.value.length === 0|| con.value.length>10){

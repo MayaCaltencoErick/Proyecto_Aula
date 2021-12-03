@@ -27,7 +27,15 @@ public class Usuarios {
  */
 
     
-    private int id;
+    private int id, rol;
+
+    public int getRol() {
+        return rol;
+    }
+
+    public void setRol(int rol) {
+        this.rol = rol;
+    }
     private String nombre, email, pas;
     
     public Usuarios(){
@@ -56,6 +64,7 @@ public class Usuarios {
                 u.setNombre(rs.getString("nom_usu"));
                 u.setEmail(rs.getString("correo_usu"));
                 u.setPas(rs.getString("con_usu"));
+                u.setRol(rs.getInt("Rol_usu"));
                 System.out.println("Exito al verificar al usuario");
 
                 break;
@@ -83,8 +92,8 @@ public static int registrarEmpleado(Usuarios e){
         int estatus = 0;
         try{
             Connection con = Conexion.getConnection();
-            String q = "INSERT INTO musuario(nom_usu, correo_usu, con_usu) "
-                    + "values(?,?,?)";
+            String q = "INSERT INTO musuario(nom_usu, correo_usu, con_usu, Rol_usu) "
+                    + "values(?,?,?, ?)";
             
             PreparedStatement ps = con.prepareStatement(q);
             
@@ -92,6 +101,7 @@ public static int registrarEmpleado(Usuarios e){
             ps.setString(1, e.getNombre());            
             ps.setString(2, e.getEmail());
             ps.setString(3, e.getPas());
+            ps.setInt(4, e.getRol());
             
             estatus = ps.executeUpdate();
             System.out.println("Registro Exitoso del Empleado");
@@ -173,6 +183,7 @@ public static Usuarios buscarEmpleadoById(int id){
                 e.setNombre(rs.getString(2));               
                 e.setEmail(rs.getString(3));
                 e.setPas(rs.getString(4));
+                e.setRol(rs.getInt(5));
             }
             
             System.out.println("Usuario encontrado");
@@ -203,6 +214,7 @@ public static Usuarios buscarEmpleadoById(int id){
                 e.setNombre(rs.getString(2));
                 e.setEmail(rs.getString(3));
                 e.setPas(rs.getString(4));
+                e.setRol(rs.getInt(5));
                 lista.add(e);
             }
             

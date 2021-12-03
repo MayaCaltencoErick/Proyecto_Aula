@@ -1,10 +1,10 @@
 <%-- 
-    Document   : resenaB
-    Created on : 20/11/2021, 04:21:44 PM
+    Document   : resenaA
+    Created on : 20/11/2021, 03:55:54 PM
     Author     : PRIDE OTTER
 --%>
 
-<%@page import="modelo.Reseña"%>
+<%@page import="modelo.Resena"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%@page import="modelo.calificacion"%>
@@ -22,7 +22,7 @@
     
     
         Usuarios hola2 = (Usuarios)sesionusu.getAttribute("usuario");
-       int id = 12;
+       int id = 11;
  List lista = publicacion.buscarAllPublicacionesByLinea(id);
     %>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Línea B</title>
+    <title>Línea a</title>
     <link rel="stylesheet" href="css/style4.css">
 </head>
 <body background="linea<%=id%>.png">
@@ -47,11 +47,21 @@
     <div class="container">
         <br>
         <br>
-        <h1>Línea B</h1>
-        <h2>Calificación general: <%=Reseña.buscarAllResByIdLin(id)%>/5</h2>
+        <h1>Línea A</h1>
+        <h2>Calificación general: <%=Resena.buscarAllResByIdLin(id)%>/5</h2>
         <br>
         <br>
-        <p>Reportes de inseguridad en la línea:<%=lista.size()%></p>
+        <%  String mensaje = "";
+    if(lista.size()>= 20){
+    mensaje = " (Son demasiados, evite pasar por esta línea)";
+}
+if(lista.size() >= 10||lista.size() < 20){
+    mensaje = " (Se encuentra en el promedio de reportes, tome precauciones al tomar esta línea)";
+}
+if(lista.size() <= 10){
+    mensaje = " (Esta línea es segura, no necesita tomar muchas precauciones)";
+}%>
+        <p>Reportes de inseguridad en la línea:<%=lista.size()+ mensaje%></p>
         <br>
         <br>
         <article>
@@ -61,9 +71,23 @@
                 List<publicacion> lista2 = publicacion.buscarAllRepeticiones2(id);
                 
                 for(publicacion e : lista3){
+        String cantidad ="";  
+        String cantidad2 = "";
+  if(e.getRepeticiones()>= 10){
+     cantidad = "Tiene demasiados casos de ";
+     cantidad2 = " (Más de 10 en total), trate de evitar esta línea";
+  }
   
+  if(e.getRepeticiones() > 5||e.getRepeticiones() < 10){
+     cantidad = "Tiene abundantes casos de ";
+     cantidad2 = " (Entre 10 y 20 en total), se puede considerar más inseguro de lo normal";
+  }
+  if(e.getRepeticiones() <= 5 ){
+     cantidad = "Tiene pocos casos de: ";
+     cantidad2 = " (Menos de 10 casos) Es preocupante, pero se encuentra dentro del promedio";
+  }
                     %>
-            <p><%=e.getNom_ins()%>: <%=e.getRepeticiones()%></p>
+            <p><%=cantidad + e.getNom_ins()%></p>
             
             <%}%>
         </article>
@@ -71,7 +95,7 @@
             <%if (lista2.size()<1){
             
         }else{
-            %><p>Horario más inseguro:La <%=lista2.get(0).getNom_ins()%></p><%
+            %><p>Evite pasar por esta línea en la <%=lista2.get(0).getNom_ins()%></p><%
 }%>
             
             
@@ -104,7 +128,7 @@
         <form name="formulario" method="post" action="Resenas">
         <br>
         <input type="hidden" value="<%=id%>" class="publicar" name="idlin">
-        <p>Califique la seguridad de la línea del 1 al 5: <select name="calificacion">
+        <p>Califique su experiencia en la línea del 1 al 5: <select name="calificacion">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

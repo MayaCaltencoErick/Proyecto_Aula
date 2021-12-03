@@ -1,0 +1,68 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2/12/2021, 07:38:19 PM
+    Author     : PRIDE OTTER
+*/
+
+header{
+    width: 100%;
+    height: 60px;
+    box-shadow: 1px 1px 5px #000;
+    align-items: center;
+    text-align: center;
+    background-color: #2F2F2F;
+    font-family: Jockey One;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 67px;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.ingresar{
+    position: absolute;
+width: 110px;
+height: 50px;
+right: 70px;
+top: 5px;
+color: white;
+font-size: 30px;
+display: flex;
+}
+
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th, td{
+	padding: 20px;
+}
+
+thead{
+	background-color: #2F2F2F;
+	border-bottom: solid 5px #383838;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #ff390dd2;
+	color: white;
+}
+#main-container{
+	margin: 150px auto;
+	width: 1200px;
+}

@@ -41,11 +41,11 @@ public class Registrar extends HttpServlet {
             con = request.getParameter("con");
             cor = request.getParameter("cor");
             Usuarios e = new Usuarios();
-            
+            int rol = 0;
             e.setNombre(nom);
             e.setPas(con);
             e.setEmail(cor);
-            
+            e.setRol(rol);
             
             System.out.println(nom);
             System.out.println(con);
@@ -69,9 +69,8 @@ public class Registrar extends HttpServlet {
             
             
             if(estatus > 0){
-                idsesion.setAttribute("nomusuario", e.getNombre());
-                idsesion.setAttribute("idusuario", e.getId());
-                response.sendRedirect("index.html");
+                idsesion.setAttribute("usuario", e);
+                response.sendRedirect("iniciar.html");
                 
             }else{
                 response.sendRedirect("error.jsp");

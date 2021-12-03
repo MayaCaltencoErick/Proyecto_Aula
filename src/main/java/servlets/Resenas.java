@@ -82,14 +82,14 @@ public class Resenas extends HttpServlet {
             
             if(estatus > 0){
                 
-                response.sendRedirect("index.html");
+                response.sendRedirect("resena"+id_pub+".jsp");
                 
             }else{
                 response.sendRedirect("error.jsp");
                 
             } 
             }else{
-                response.sendRedirect("index.html");
+                response.sendRedirect("resena"+id_pub+".jsp");
                 
             }
         response.setContentType("text/html;charset=UTF-8");

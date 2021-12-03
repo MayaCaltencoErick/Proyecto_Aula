@@ -64,7 +64,7 @@ public class Publicar extends HttpServlet {
             int estatus =publicacion.registrarPublicacion(e);
             int linea = (int) sesionusu.getAttribute("linea");
             if(estatus > 0){
-                response.sendRedirect("index.html");
+                response.sendRedirect("linea"+linea+".jsp");
             }else{
                 response.sendRedirect("error.jsp");
             }

@@ -48,6 +48,14 @@
         <servlet-name>Resenas</servlet-name>
         <servlet-class>servlets.Resenas</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BorrarCuen2</servlet-name>
+        <servlet-class>servlets.BorrarCuen2</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Registrar2</servlet-name>
+        <servlet-class>servlets.Registrar2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Publicar</servlet-name>
         <url-pattern>/Publicar</url-pattern>
@@ -95,6 +103,14 @@
     <servlet-mapping>
         <servlet-name>Resenas</servlet-name>
         <url-pattern>/Resenas</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BorrarCuen2</servlet-name>
+        <url-pattern>/BorrarCuen2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Registrar2</servlet-name>
+        <url-pattern>/Registrar2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -23,9 +23,9 @@ public class Conexion {
 public static Connection getConnection(){
         String url, userName, password;
         
-        url = "jdbc:mysql://us-cdbr-east-04.cleardb.com:3306/heroku_8824012eabc0c11";
-        userName = "b45ded842b30d0";
-        password = "137821bc";
+         url = "jdbc:mysql://localhost:3307/mesegdb";
+        userName = "root";
+        password = "nAruto.04S";
         
         Connection con = null;
         

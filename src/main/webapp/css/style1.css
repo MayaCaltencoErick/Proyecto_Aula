@@ -5,11 +5,10 @@
 
 .btn1{
     padding: 1rem;
-    position: absolute;
+   
 width: 294px;
 height: 93px;
-left: 117px;
-top: 233px;
+margin:150px auto;
 background: #2F2F2F;
 color: white;
 font-family: Jockey One;
@@ -22,15 +21,16 @@ align-items: center;
 text-align: center;
 border: none;
 border-radius: 1rem;
+margin:150px auto;
 }
 
 .btn2{
     padding: 1rem;
-position: absolute;
+
 width: 294px;
 height: 93px;
-left: 553px;
-top: 236px;
+margin:150px auto;
+
 background: #2F2F2F;
 color: white;
 font-family: Jockey One;

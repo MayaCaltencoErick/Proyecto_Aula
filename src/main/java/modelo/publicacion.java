@@ -18,7 +18,15 @@ import java.util.List;
  * @author PRIDE OTTER
  */
 public class publicacion {
-    private int id, id_hor, id_ins, id_par, id_usu, id_mes, id_anio, repeticiones;
+    private int id, id_hor, id_ins, id_par, id_usu, id_mes, id_anio, repeticiones, id_lin;
+
+    public int getId_lin() {
+        return id_lin;
+    }
+
+    public void setId_lin(int id_lin) {
+        this.id_lin = id_lin;
+    }
 
     public int getRepeticiones() {
         return repeticiones;
@@ -181,7 +189,7 @@ public static int actualizarPublicacion(publicacion e){
         try{
             Connection con = Conexion.getConnection();
             String q = "update mpublicacion set des_pub = ?, id_hor = ?, id_ins = ?,"
-                    + "id_par = ?, id_usu = ?, id_mes = ?, id_anio = ? "
+                    + "id_par = ?, id_mes = ?, id_anio = ? "
                     + "where id_pub = ?";
             
             PreparedStatement ps = con.prepareStatement(q);
@@ -191,10 +199,10 @@ public static int actualizarPublicacion(publicacion e){
             ps.setInt(2, e.getId_hor());
             ps.setInt(3, e.getId_ins());
             ps.setInt(4, e.getId_par());
-            ps.setInt(5, e.getId_usu());
-            ps.setInt(6, e.getId_mes());
-            ps.setInt(7, e.getId_anio());
-            ps.setInt(8, e.getId());
+           
+            ps.setInt(5, e.getId_mes());
+            ps.setInt(6, e.getId_anio());
+            ps.setInt(7, e.getId());
             
             estatus = ps.executeUpdate();
             System.out.println("Actualizacion Exitosa del publicacion");
@@ -271,7 +279,7 @@ public static publicacion buscarPublicacionById(int id){
         
         try{
             Connection con = Conexion.getConnection();
-            String q = "select mpublicacion.ID_pub, mpublicacion.des_pub, ehorario.nom_hor, ctipoinseguridad.nom_ins, clinea.nom_lin, cestacion.nom_est, musuario.nom_usu, cmes.nom_mes, canio.num_ano FROM mpublicacion INNER JOIN eparadas ON eparadas.id_par = mpublicacion.id_par INNER JOIN clinea ON clinea.id_lin = eparadas.id_lin INNER JOIN cestacion ON cestacion.id_est=eparadas.id_est INNER JOIN ehorario ON ehorario.id_hor=mpublicacion.id_hor INNER JOIN ctipoinseguridad ON ctipoinseguridad.id_ins=mpublicacion.id_ins INNER JOIN musuario ON musuario.id_usu=mpublicacion.id_usu INNER JOIN cmes ON cmes.id_mes=mpublicacion.id_mes INNER JOIN canio ON canio.id_ano=mpublicacion.id_anio ORDER BY mpublicacion.id_pub";
+            String q = "select mpublicacion.ID_pub, mpublicacion.des_pub, ehorario.nom_hor, ctipoinseguridad.nom_ins, clinea.nom_lin, cestacion.nom_est, musuario.nom_usu, cmes.nom_mes, canio.num_ano, eparadas.id_lin FROM mpublicacion INNER JOIN eparadas ON eparadas.id_par = mpublicacion.id_par INNER JOIN clinea ON clinea.id_lin = eparadas.id_lin INNER JOIN cestacion ON cestacion.id_est=eparadas.id_est INNER JOIN ehorario ON ehorario.id_hor=mpublicacion.id_hor INNER JOIN ctipoinseguridad ON ctipoinseguridad.id_ins=mpublicacion.id_ins INNER JOIN musuario ON musuario.id_usu=mpublicacion.id_usu INNER JOIN cmes ON cmes.id_mes=mpublicacion.id_mes INNER JOIN canio ON canio.id_ano=mpublicacion.id_anio ORDER BY mpublicacion.id_pub";
             
             PreparedStatement ps = con.prepareStatement(q);
             
@@ -288,6 +296,7 @@ public static publicacion buscarPublicacionById(int id){
                 e.setNom_usu(rs.getString(7));
                 e.setNom_mes(rs.getString(8));
                 e.setNum_ano(rs.getString(9));
+                e.setId_lin(rs.getInt(10));
                 lista.add(e);
             }
             
@@ -374,7 +383,7 @@ public static List<publicacion> buscarAllRepeticiones2(int id){
        
         try{
             Connection con = Conexion.getConnection();
-            String q = "select COUNT(mpublicacion.id_ins) as Repetidos, ehorario.nom_hor, MPUBLICACION.ID_hor FROM mpublicacion INNER JOIN eparadas ON eparadas.id_par=mpublicacion.id_par INNER JOIN ehorario ON ehorario.id_hor=mpublicacion.id_hor where eparadas.id_lin=? group by mpublicacion.id_hor order by repetidos DESC";
+            String q = "select COUNT(mpublicacion.id_hor) as Repetidos, ehorario.nom_hor, MPUBLICACION.ID_hor FROM mpublicacion INNER JOIN eparadas ON eparadas.id_par=mpublicacion.id_par INNER JOIN ehorario ON ehorario.id_hor=mpublicacion.id_hor where eparadas.id_lin=? group by mpublicacion.id_hor order by repetidos DESC";
             
             PreparedStatement ps = con.prepareStatement(q);
             
