@@ -33,7 +33,6 @@
 
     %>
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,12 +41,13 @@
     <script type="text/javascript" src="./codigo.js"></script>
     <link rel="stylesheet" href="css/style5.css">
     <title>Editar Publicacion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body background= "naranja.png">
     
    
-
-	
 <header>
         <section class="menu">
         
@@ -60,8 +60,12 @@
 	 <area target="_blank" alt="INGRESAR" title="INGRESAR" href="ingresar.html" coords="1618,2,1903,116" shape="rect">
 </map>
 <p>
+    <div class="container" >
 <h1 align="center" style="color:#ffffff"> Editar la publicación </h1>
-<div class="container" >
+
+<hr>
+<br>
+
 <form name="formulario" method="post" action="ActPub" onsubmit="return validar()">
     
     <h1 align="center" style="color:#ffffff">Id <%=hola2%> <input type="hidden" name="id" value="<%=hola2%>"></h1>
@@ -146,14 +150,17 @@
                 %>
            
             </select></h1>
+            <br>
+            <br>
 	<h1 align="center" style="color:#ffffff">Describe tu opinion</h1>
-	<p align="center"><textarea name="textarea" rows="10" cols="50" id="texto" ></textarea>
-	<p ><a align="left" href="index.html"><img src="regresar.PNG" width="190" height="80"></a><input align="right" type="image" src="boton1.PNG" alt="submit" width="190" height="80" onclick="return validar()" /></p>
+	<p align="center"><textarea name="textarea" rows="10" cols="50" id="texto" placeholder="Ingresa tu mensaje..."></textarea>
+	</div>
+        <p class="btn"><a align="left" href="index.html"><img src="regresar.PNG" width="190" height="80"></a><input align="right" type="image" src="boton1.PNG" alt="submit" width="190" height="80" onclick="return validar()" /></p>
         
    
 
 	</form>
-                </div>
+                
 </body>
 </html>
 <%}%>

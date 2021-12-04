@@ -33,6 +33,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Línea a</title>
     <link rel="stylesheet" href="css/style4.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body background="linea<%=id%>.png">
     <header>

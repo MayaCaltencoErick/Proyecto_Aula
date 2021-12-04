@@ -35,6 +35,8 @@ int hola3 = Integer.parseInt(hola2);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calificación</title>
     <link rel="stylesheet" href="css/style3.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <script type="text/javascript" src="./codigo.js"></script>
 </head>
 <body bgcolor="FF380D">
