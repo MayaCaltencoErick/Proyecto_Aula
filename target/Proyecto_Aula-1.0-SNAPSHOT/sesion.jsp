@@ -15,6 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sesión</title>
     <link rel="stylesheet" href="css/style1.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <%
     String usuario = "";
@@ -50,6 +52,10 @@
             <a href="index.html"> Metro Seguro</a>
         </section>
     </header>
+    <%if(hola.getRol()==1){
+      %>  <a href="Admin.jsp" > <input type="button" value="Administrar" class="btn1"></a><%
+    }%>
+    
      <form name="formulario" method="post" action = "Cerrar">
          <input type="submit" value="Cerrar Sesión" class="btn2"> 
      </form>    

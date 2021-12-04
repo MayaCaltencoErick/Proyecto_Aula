@@ -42,6 +42,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style7.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
     <title>Usuarios</title>
 </head>
 <body bgcolor="FF380D">
@@ -50,7 +52,7 @@
         
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Metro_de_la_Ciudad_de_M%C3%A9xico_logo.svg/1200px-Metro_de_la_Ciudad_de_M%C3%A9xico_logo.svg.png"
             width="45px" height="45px">
-                <a > Administrar Publicaciones</a>
+                <a href="index.html"> Metro Seguro</a>
                 <a href="Admin.jsp" class="ingresar">Regresar</a>
         </section>
     </header><!-- comment -->
@@ -60,6 +62,10 @@
     <br><!-- comment -->
     <br><!-- comment -->
     <br><!-- comment -->
+    <div class="container" >
+        <h1 align="center" style="color:#ffffff"> Administrar Publicaciones </h1>
+<hr>
+<br>
     <div id="main-container">
     <table>
         <thead>
@@ -101,6 +107,7 @@
                 
             </tbody>
         </table>
+    </div>
     </div>
     </body>
 </html>

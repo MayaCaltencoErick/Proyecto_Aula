@@ -15,10 +15,10 @@ header{
     align-items: center;
     text-align: center;
     background-color: #2F2F2F;
-    font-family: Jockey One;
+    font-family: Fjalla One;
 font-style: normal;
 font-weight: normal;
-font-size: 48px;
+font-size: 40px;
 line-height: 67px;
 
 }
@@ -51,18 +51,33 @@ th, td{
 thead{
 	background-color: #2F2F2F;
 	border-bottom: solid 5px #383838;
+        border: solid 1px #FFFFFF;
 	color: white;
 }
 
+h1{
+    font-family: Fjalla One;
+}
 tr:nth-child(even){
 	background-color: #ddd;
 }
 
 tr:hover td{
-	background-color: #ff390dd2;
+	background-color: #FF380D;
 	color: white;
 }
 #main-container{
 	margin: 150px auto;
 	width: 1200px;
+}
+
+.container{
+    margin: 3rem;
+    background-color: #2F2F2F;
+    padding-left: 12rem;
+    padding-right: 12rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    border-radius: 4rem;
+    
 }

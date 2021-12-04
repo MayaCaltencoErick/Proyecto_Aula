@@ -19,8 +19,10 @@ modelo\Estacion.class
 Control\Conexion.class
 servlets\ActPub.class
 servlets\BorrarCuen.class
+servlets\BorrarCuen2.class
 servlets\Registrar.class
 modelo\Reseña.class
+servlets\Registrar2.class
 servlets\BorrarPub.class
 modelo\inseguridad.class
 servlets\Iniciar.class

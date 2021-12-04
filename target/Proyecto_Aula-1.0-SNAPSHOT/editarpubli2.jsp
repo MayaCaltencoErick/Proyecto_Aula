@@ -41,6 +41,26 @@
     <script type="text/javascript" src="./codigo.js"></script>
     <link rel="stylesheet" href="css/style5.css">
     <title>Editar Publicacion</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+</head>
+<body background= "naranja.png">
+    
+   
+
+	
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="./codigo.js"></script>
+    <link rel="stylesheet" href="css/style5.css">
+    <title>Editar Publicacion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body background= "naranja.png">
     
@@ -59,8 +79,13 @@
 	 <area target="_blank" alt="INGRESAR" title="INGRESAR" href="ingresar.html" coords="1618,2,1903,116" shape="rect">
 </map>
 <p>
+    <div class="container" >
 <h1 align="center" style="color:#ffffff"> Editar la publicación </h1>
-<div class="container" >
+
+
+<hr>
+<br>
+
 <form name="formulario" method="post" action="ActPub" onsubmit="return validar()">
     
 
@@ -84,7 +109,7 @@
                 </select>
       </h1>
       
-      <p>
+
       <h1 style="color:#ffffff" align="right">Mes del acontencimiento:   <select name="mes">
             <% 
                 List<Mes> lista4 = Mes.buscarAllMes();
@@ -103,7 +128,6 @@
                 %>
                 </select></h1>
 	
-        
 
 <h1 align="left" style="color:#ffffff"> Estacion:
     <select name="Estacion">
@@ -126,6 +150,7 @@
            
             </select>
   </h1>
+
 <h1 align="right" style="color:#ffffff">Horario: <select name="Horario">
             <% 
                 List<Horario> lista3 = Horario. buscarAllhrs();
@@ -144,14 +169,15 @@
                 %>
            
             </select></h1>
+            <br>
+            <br>
 	<h1 align="center" style="color:#ffffff">Describe tu opinion</h1>
-	<p align="center"><textarea name="textarea" rows="10" cols="50" id="texto" ></textarea>
-	<p ><a align="left" href="index.html"><img src="regresar.PNG" width="190" height="80"></a><input align="right" type="image" src="boton1.PNG" alt="submit" width="190" height="80" onclick="return validar2()" /></p>
-        
-   
+	<p align="center"><textarea name="textarea" rows="10" cols="50" id="texto" placeholder="Ingresa tu mensaje..."></textarea></p>
+    </div>
+	<p class="btn"><a align="left" href="index.html"><img src="regresar.PNG" width="190" height="80"></a><input align="right" type="image" src="boton1.PNG" alt="submit" width="190" height="80" onclick="return validar2()" /></p>
 
 	</form>
-                </div>
+                
 </body>
 </html>
 <%}%>
