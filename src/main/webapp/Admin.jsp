@@ -52,6 +52,7 @@
      <a href="usuarios.jsp" > <input type="button" value="Administrar Usuarios" class="btn1"></a>
     <a href="publicaciones.jsp" > <input type="button" value="Administrar Publicacion" class="btn2"></a>
     <a href="registrar2.jsp" > <input type="button" value="Registrar Administrador" class="btn3"></a>
+    <a href="Estadisticas.jsp" > <input type="button" value="Estadísticas" class="btn4"></a>
     
 </body>
 <%}%>

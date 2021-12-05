@@ -408,6 +408,38 @@ public static List<publicacion> buscarAllRepeticiones2(int id){
         }
         return lista;
     }
+
+public static List<publicacion> buscarAllRepeticiones3(){
+        List<publicacion> lista = new ArrayList<>();
+       
+        try{
+            Connection con = Conexion.getConnection();
+            String q = "select COUNT(mpublicacion.id_mes) as Repetidos, ehorario.nom_hor, ctipoinseguridad.nom_ins, cmes.nom_mes FROM mpublicacion INNER JOIN eparadas ON eparadas.id_par=mpublicacion.id_par INNER JOIN clinea ON clinea.id_lin = eparadas.id_lin INNER JOIN ehorario ON ehorario.id_hor=mpublicacion.id_hor INNER JOIN cmes ON cmes.id_mes=mpublicacion.id_mes INNER JOIN ctipoinseguridad ON ctipoinseguridad.id_ins=mpublicacion.id_ins group by mpublicacion.id_mes order by repetidos DESC";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                publicacion e = new publicacion();
+                e.setRepeticiones(rs.getInt(1));
+                e.setNom_hor(rs.getString(2));
+                e.setNom_ins(rs.getString(3));
+                e.setNom_mes(rs.getString(4));
+                lista.add(e);
+                System.out.println(e.getContenido());
+            }
+            System.out.println(lista.get(1).getContenido());
+            System.out.println("Publicacion encontrado");
+            con.close();
+        
+        }catch(Exception ed){
+            System.out.println("Error al buscar a los Publicacion");
+            System.out.println(ed.getMessage());
+        
+        }
+        return lista;
+    }
     public int getId() {
         return id;
     }

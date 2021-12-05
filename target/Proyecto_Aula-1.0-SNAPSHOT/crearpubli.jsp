@@ -43,7 +43,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
-<body background= "naranja.png">
+<body bgcolor="FF380D">
     
    
 

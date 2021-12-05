@@ -75,6 +75,26 @@ text-align: center;
 border: none;
 border-radius: 1.5rem;
 }
+.btn4{
+    padding: 1rem;
+position: absolute;
+width: 420px;
+height: 93px;
+left: 1453px;
+top: 236px;
+background: #2F2F2F;
+color: white;
+font-family: Jockey One;
+font-style: normal;
+font-weight: normal;
+font-size: 36px;
+line-height: 50px;
+display: flex;
+align-items: center;
+text-align: center;
+border: none;
+border-radius: 1.5rem;
+}
 
 header{
     width: 100%;
